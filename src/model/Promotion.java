@@ -23,10 +23,18 @@ public class Promotion extends Item {
     Set<Item> PromotionItems;
    PromotionType type;
    double discount; 
+
+    public Promotion(double l_Price) {
+        super(l_Price);
+    }
 }
 enum PromotionType
 {
 Combo,
 fixedAmmount,
-percentage
+percentage;
+public String toString() 
+    {
+        return name().charAt(0) + name().substring(1);
+    }
 }

@@ -37,11 +37,25 @@ public class RentingOrder implements Serializable {
      
    @OneToMany
     Set<OrderItem> BorrowingItems;
+   
+   public void RentingOrder(Date StartDate, Date EndDate, Customer l_Borrower,orderStatus l_Status)
+   {
+      BookingDate= new Date();
+      StartRenting=StartDate;
+      EndRenting= EndDate;
+      Borrower= l_Borrower;
+      Status=l_Status;
+   }
 }
 enum orderStatus
 {
     Reserved,
     Orderd,
     Completed,
-    Canceled
+    Canceled;
+    public String toString() 
+    {
+        return name().charAt(0) + name().substring(1);
+    }
+    
 }

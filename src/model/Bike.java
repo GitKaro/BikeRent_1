@@ -8,6 +8,7 @@ package model;
 
 import  java.awt.Color;
 import java.lang.reflect.Field;
+import java.util.Date;
 
 import java.util.Set;
 import javax.persistence.*;
@@ -26,6 +27,20 @@ public class Bike extends Item {
     
     @OneToMany
     Set<Defect> Defects;
+    
+    @OneToMany
+    Set<OrderItem> Orders;
+
+   
+
+    public Bike(double l_Price,String l_Model,String l_Brand,String l_FrameNumber,Color l_Color, int l_Gears, int l_FrameSize) {
+        super(l_Price);
+        Model=l_Model;
+        Brand =l_Brand;
+        FrameNumber = l_FrameNumber;
+        Color =l_Color;
+        FrameSize= l_FrameSize;
+    }
     
    public String  getModel()
    {
@@ -100,6 +115,19 @@ public class Bike extends Item {
             }
         }
         return state;
+    }
+    public boolean IsRentable(Date Start, Date End )
+    {
+        boolean Rentable= true;
+        for(OrderItem order :Orders)
+        {
+            if((order.parentOrder.StartRenting.after(Start)) || (order.parentOrder.EndRenting.before(End)))
+            {
+              Rentable=false;  
+            } 
+           
+        }
+        return Rentable;
     }
 }
 

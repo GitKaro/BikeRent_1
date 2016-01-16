@@ -14,10 +14,30 @@ import javax.persistence.*;
 public class Chainlock extends Accessoires {
     int SecuretyLevel;
     lockType lockCategory;
+
+    public Chainlock(double l_Price, int Sl, lockType l_LockChategory ) {
+        super(l_Price );
+        SecuretyLevel=Sl;
+        lockCategory= l_LockChategory;
+    }
+    
+    public int GetSecuretyLevel()
+    {
+     return SecuretyLevel;
+    }
+    public String GetLockLevel()
+    {
+     return lockCategory.toString();
+    }
+    
 }
 enum lockType
 {
  CableLock,
  ChainLock,
- ULock
+ ULock;
+ public String toString() 
+    {
+        return name().charAt(0) + name().substring(1);
+    }
 }

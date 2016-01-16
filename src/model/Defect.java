@@ -22,6 +22,12 @@ Condition DefectState;
 @OneToOne(fetch=FetchType.LAZY)
  RentingOrder linkedOrder ;  
  
+public Defect(String l_Description, Employee aE,Condition DS)
+{
+    l_Description=Description;
+    assighnedEngeneer= aE;
+    DefectState=DS;
+}
 public boolean state()
 {
     return fixed;
@@ -46,6 +52,10 @@ public String StartFixing()
 public String  assignedEngeneer()
 {
  return  assighnedEngeneer.GetAddress(id);
+}
+public RentingOrder RentinOrder()
+{
+    return linkedOrder;
 }
 }
 

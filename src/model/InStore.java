@@ -10,5 +10,10 @@ import javax.persistence.*;
 
 public class InStore extends RentingOrder{
     @ManyToOne
-    Employee assistendEmployee;
+    Employee assinghtEmployee;
+    
+    String GetAssighnedEmployee()
+    {
+        return assinghtEmployee.GetName();
+    }
 }

@@ -24,6 +24,15 @@ public class Person implements Serializable {
     private String  LastName;
    
     private Date    DOB;
+   
+    public Person(String l_FirstName, String l_LastName, Date l_DOB, Address ad)
+    {
+       FirstName=l_FirstName;
+       LastName=l_LastName;
+       DOB=l_DOB;
+       Addresslist.add(ad);
+    }
+    
     
    public String GetName()
    {

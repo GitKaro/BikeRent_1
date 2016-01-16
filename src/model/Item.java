@@ -16,9 +16,20 @@ public class Item implements Serializable {
     @Id
      @GeneratedValue(strategy = GenerationType.TABLE)
     int ItemID;
-    
-   
+  
     double Price;
-            
+    
+    public double getPrice()
+    {
+        return Price;
+    }
+    public void SetPrice(double newPrice)
+    {
+        Price=newPrice;
+    }
+    public Item(double l_Price)
+    {
+        Price=l_Price;
+    }    
 
 }
