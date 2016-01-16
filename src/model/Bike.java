@@ -6,7 +6,9 @@
 package model;
 
 
-import java.awt.Color ;
+import  java.awt.Color;
+import java.lang.reflect.Field;
+
 import java.util.Set;
 import javax.persistence.*;
 
@@ -15,17 +17,89 @@ import javax.persistence.*;
 @Table(name = "BIKE")
 public class Bike extends Item {
    
-//   String Model;
-//   String Brand;
-//   String FrameNumber;
-//    Color Color;
-//   
-//  
-//    int Gears;
-//   
-// 
-//    int FrameSize;
-//   
-//   @OneToMany(cascade=CascadeType.ALL)
-//    Set<Defect> Defects;
+   private String Model;
+   private String Brand;
+   private String FrameNumber;
+   private Color Color; 
+   private int Gears;
+   private int FrameSize;
+    
+    @OneToMany
+    Set<Defect> Defects;
+    
+   public String  getModel()
+   {
+       return Model;
+   }
+   
+   public String getBrand()
+   {
+       return Brand;
+   }        
+   public String  getFrameNumber()
+   {
+       return FrameNumber;
+   }
+   
+   public String getColor()
+   {
+       return Color.toString();
+   }
+
+    public int getGears()
+    {
+        return Gears;
+    }
+    
+    public void changeGears(int newGears)
+    {
+        Gears= newGears;
+    }
+     
+      
+    public int getFrameSize()
+    {
+        return FrameSize;
+    }
+    
+    public Condition getBikeState()
+    {
+        Condition state = null;
+        for(Defect issue : Defects)
+        {
+            
+            if(!issue.state())
+            {
+                if(issue.State()==Condition.CompleteDameged)
+                {
+                    return Condition.CompleteDameged;
+                      
+                }
+                 if(issue.State()==Condition.BigDamaged)
+                {
+                  
+                    state= Condition.BigDamaged;
+                      
+                }
+                  if(issue.State()==Condition.CosmeticDefects)
+                {
+                    if(state== Condition.SmallIssues|| state==null)
+                    {
+                        state= Condition.CosmeticDefects;
+                    } 
+                }
+                   if(issue.State()==Condition.SmallIssues)
+                {
+                     if( null ==state)
+                    {
+                        state= Condition.SmallIssues;
+                    }
+                      
+                }
+                
+            }
+        }
+        return state;
+    }
 }
+

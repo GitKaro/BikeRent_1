@@ -3,6 +3,7 @@ package model;
 
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 
@@ -16,7 +17,7 @@ public class Person implements Serializable {
     private Long    ID ;
    
    @OneToMany(cascade=CascadeType.ALL)
-    private Set <Address>Address;
+    private Set<Address> Addresslist;
    
     private String  FirstName;
    
@@ -24,6 +25,28 @@ public class Person implements Serializable {
    
     private Date    DOB;
     
-    
-    
+   public String GetName()
+   {
+    return FirstName+" "+LastName;
+   }
+   public String GetAddress( int importance)
+   {
+     Address[] t =  (Address [])Addresslist.toArray();
+       return (t[importance]).GetAddress();
+   }
+    public Set<Address> GetAddress( )
+   {
+       return Addresslist;
+   }
+   
+   public void SetAddress(Address newAddress)
+   {
+       Addresslist.add(newAddress);
+   }
+   public Date GetDOB()
+   {
+        return DOB;
+   }
+ 
+   
 }

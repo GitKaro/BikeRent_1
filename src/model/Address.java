@@ -16,7 +16,6 @@ public class Address implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE)
    private  Long  id;
    
-
     private String street;
    
     private String zip;
@@ -25,15 +24,15 @@ public class Address implements Serializable {
    
     private String country;
 
-    public Address() {
-    }
+   private String housenumber;
 
-    public Address(Long id) {
-        this.id = id;
+    public Address() {
+       
     }
 
     public Address(String street, String zip, String city, String country) {
         this.street = street;
+        this.housenumber = housenumber;
         this.zip = zip;
         this.city = city;
         this.country = country;
@@ -48,7 +47,13 @@ public class Address implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+  public String gethousenumber() {
+        return housenumber;
+    }
 
+    public void setHousenumber(String housenumber) {
+        this.housenumber = housenumber;
+    }
   
     public String getStreet() {
         return street;
@@ -83,29 +88,11 @@ public class Address implements Serializable {
     public void setCountry(String country) {
         this.country = country;
     }
+    public String GetAddress()
+    {
+        return this.street +" "+this.housenumber+",\n "+ this.zip +" "+this.city+"\n"+ this.country ;
+    }
 
-//    @Override
-//    public int hashCode() {
-//        return Objects.hashCode(id, street, zip, city, country);
-//    }
-//
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (obj == null) {
-//            return false;
-//        }
-//
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-//
-//        Address that = (Address) obj;
-//
-//        return Objects.equal(this.id, that.id)
-//                && Objects.equal(this.street, that.street)
-//                && Objects.equal(this.zip, that.zip)
-//                && Objects.equal(this.city, that.city)
-//                && Objects.equal(this.country, that.country);
-//    }
+
         
 }

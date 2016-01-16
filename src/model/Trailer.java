@@ -10,8 +10,8 @@ public class Trailer extends Accessoires {
     
   
     trailerUse type;
-   
     Boolean rainproof;
+    
 }
 enum trailerUse
 {

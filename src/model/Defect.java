@@ -14,6 +14,7 @@ public class Defect implements Serializable {
  String Description; 
 @OneToOne(fetch=FetchType.LAZY)
  Employee assighnedEngeneer;
+
 boolean fixed;
 Condition DefectState; 
  
@@ -21,11 +22,42 @@ Condition DefectState;
 @OneToOne(fetch=FetchType.LAZY)
  RentingOrder linkedOrder ;  
  
+public boolean state()
+{
+    return fixed;
 }
+        
+
+public void isFixed()
+{
+    fixed=false;
+}
+
+public Condition State()
+{
+    return DefectState;
+}
+
+public String StartFixing()
+{
+    return DefectState.toString()+Description;
+}
+        
+public String  assignedEngeneer()
+{
+ return  assighnedEngeneer.GetAddress(id);
+}
+}
+
 enum Condition
 {
 CosmeticDefects,
 SmallIssues,
-BigDamage,
-CompleteDamege
+BigDamaged,
+CompleteDameged;
+@Override
+public String toString() 
+    {
+        return name().charAt(0) + name().substring(1);
+    }
 }

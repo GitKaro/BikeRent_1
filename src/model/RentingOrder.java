@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.*;
+import org.hibernate.annotations.Type;
 
 
 @Entity
@@ -19,20 +20,23 @@ public class RentingOrder implements Serializable {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int Id;
     
+   @Type(type="date")
     Date  BookingDate;
    
+    @Type(type="date")
     Date StartRenting;
    
+    @Type(type="date")
     Date EndRenting;
    
-   @OneToOne(fetch = FetchType.LAZY)//, mappedBy = "stock", cascade = CascadeType.ALL)
+   @OneToOne(fetch = FetchType.LAZY)
     Customer Borrower;
     
    
     orderStatus Status; 
      
-   @OneToMany(cascade=CascadeType.ALL)
-    Set<Item> BorrowingItems;
+   @OneToMany
+    Set<OrderItem> BorrowingItems;
 }
 enum orderStatus
 {
