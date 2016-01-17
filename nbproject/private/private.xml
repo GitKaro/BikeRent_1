@@ -3,24 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Person.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Online.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Accessoires.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Address.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/bikerent/BikeRent.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Customer.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Item.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/RentingOrder.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Defect.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Employee.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Female.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/InStore.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/OnlineAccess.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Bike.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Male.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Chainlock.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Child.java</file>
-            <file>file:/C:/Users/Karolina/Documents/NetBeansProjects/BikeRent/src/java/model/Trailer.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/model/Address.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/bikerent/AddCustomer.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/model/lockType.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/model/trailerUse.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/BikeRent.sql</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/model/Trailer.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/model/Chainlock.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/test/bikerent/Test1Test.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/bikerent/Tests.java</file>
+            <file>file:/C:/Users/Karolina/UNI/Git_project/rentabike_2/BikeRent_1/src/bikerent/Test1.java</file>
         </group>
     </open-files>
 </project-private>

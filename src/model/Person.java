@@ -1,7 +1,7 @@
 
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
@@ -24,12 +24,16 @@ public class Person implements Serializable {
     private String  LastName;
    
     private Date    DOB;
+    
+    private String  Password;
    
-    public Person(String l_FirstName, String l_LastName, Date l_DOB, Address ad)
+    public Person(String l_FirstName, String l_LastName, Date l_DOB,
+                  String l_Password, Address ad)
     {
        FirstName=l_FirstName;
        LastName=l_LastName;
        DOB=l_DOB;
+       Password=l_Password;
        Addresslist.add(ad);
     }
     

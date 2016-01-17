@@ -2,15 +2,18 @@
 package model;
 
 
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "CUSTOMER")
 public class Customer extends Person {
     
-    public Customer(String l_FirstName, String l_LastName, Date l_DOB, Address ad) {
-        super(l_FirstName, l_LastName, l_DOB, ad);
+    private String Mail = null;
+    public Customer(String l_FirstName, String l_LastName, Date l_DOB,
+                    String Mail, String Password, Address ad) {
+        super(l_FirstName, l_LastName, l_DOB, Password, ad);
+        this.Mail = Mail;
     }
     
 }
