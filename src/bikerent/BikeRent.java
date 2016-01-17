@@ -33,7 +33,7 @@ public class BikeRent {
 	sessionFactory = configuration.buildSessionFactory(serviceRegistry);  
 	    
 	return sessionFactory;  
-    }
+   }
 	
     public static void main(String[] args) {
         // Configure the session factory
