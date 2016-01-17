@@ -6,7 +6,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Set;
 import javax.persistence.*;
 
 
@@ -25,24 +24,17 @@ public class OrderItem implements Serializable {
     RentingOrder parentOrder;
     
     @OneToMany
-    Set<Item> Product;
+    Item Product;
     
     public RentingOrder getParentOrder()
     {
         return parentOrder;
     }
-    public Set<Item> GetProducts()
+    public Item GetProducts()
     {
      return Product;
     }
-    public void AddProducts(Item newItem)
-    {
-        Product.add(newItem);
-    }
-    public void RemoveProducts(Item OldItem)
-    {
-        Product.remove(OldItem);
-    }
+  
     
 
   
