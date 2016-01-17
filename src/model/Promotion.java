@@ -17,7 +17,7 @@ public class Promotion extends Item {
     String Promocode;
     Date PromotionEnd;
     String Name;
-    String TotalDiscount;
+    double TotalDiscount;
     
    @OneToMany(cascade=CascadeType.ALL)
     Set<Item> PromotionItems;
