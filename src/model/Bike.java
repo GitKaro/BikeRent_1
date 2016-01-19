@@ -32,7 +32,7 @@ public class Bike extends Item {
     Set<OrderItem> Orders;
 
 
-   
+   public Bike() {}
 
     public Bike(double l_Price,String l_Model,String l_Brand,String l_FrameNumber,Color l_Color, int l_Gears, int l_FrameSize) {
         super(l_Price);
@@ -131,5 +131,16 @@ public class Bike extends Item {
         }
         return Rentable;
     }
+    
+    
+    public String printBike() {
+
+        return "ID: " + super.getID() +
+               "\t\tModel: " + Model +
+               "\t\tBrand: " + Brand +
+               "\t\tFramenumber: " + FrameNumber
+        ;
+    }
+            
 }
 

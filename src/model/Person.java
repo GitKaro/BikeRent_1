@@ -28,6 +28,8 @@ public class Person implements Serializable {
     
     private String  Password;
    
+    public Person() {}
+    
     public Person(String l_FirstName, String l_LastName, Date l_DOB,
                   String l_Password, Address ad)
     {
@@ -43,6 +45,12 @@ public class Person implements Serializable {
    {
     return FirstName+" "+LastName;
    }
+   
+   public void SetName(String firstname, String lastname) {
+       FirstName = firstname;
+       LastName  = lastname;
+   }
+   
    public String GetAddress( int importance)
    {
      Address[] t =  (Address [])Addresslist.toArray();
@@ -61,6 +69,20 @@ public class Person implements Serializable {
    {
         return DOB;
    }
+   
+   public Long getID() {
+       return ID;
+   }
+   
+       
+    public String printPerson() {
+
+        return "ID: " + getID() +
+               "\t\tFirstname: " + FirstName +
+               "\t\tLastName: " + LastName +
+               "\t\tDOB: " + DOB
+        ;
+    }
  
    
 }

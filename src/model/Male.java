@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Table(name = "MALE")
 public class Male extends Bike {
     
+    public Male() {}
     public Male(double l_Price, String l_Model, String l_Brand, String l_FrameNumber, java.awt.Color l_Color, int l_Gears, int l_FrameSize) {
         super(l_Price, l_Model, l_Brand, l_FrameNumber, l_Color, l_Gears, l_FrameSize);
     }
