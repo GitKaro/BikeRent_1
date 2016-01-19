@@ -4,15 +4,19 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<property name="show_sql">true</property>
+	<!--	
+                <property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+                <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        -->
+		
+                <property name="dialect">SQLiteDialect</property>
 		<property name="connection.driver_class">org.sqlite.JDBC</property>
 		<property name="connection.url">jdbc:sqlite:BikeRent.sql</property>
 		<property name="connection.username"></property>
 		<property name="connection.password"></property>
 		
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		
                 
 		<mapping class="model.Address"/>
@@ -34,6 +38,7 @@
                 <mapping class="model.Online"/>
                 <mapping class="model.OnlineAccess"/>
                 <mapping class="model.RentingOrder"/>
+                <mapping class="model.OrderItem"/>
                 
 
 

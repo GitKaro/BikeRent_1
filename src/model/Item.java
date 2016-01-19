@@ -19,6 +19,13 @@ public class Item implements Serializable {
   
     double Price;
     
+    public Item() {}
+    
+    public Item(double l_Price)
+    {
+        Price=l_Price;
+    }    
+    
     public double getPrice()
     {
         return Price;
@@ -27,9 +34,10 @@ public class Item implements Serializable {
     {
         Price=newPrice;
     }
-    public Item(double l_Price)
-    {
-        Price=l_Price;
-    }    
+    
+    public int getID() {
+        return ItemID;
+    }
+    
 
 }

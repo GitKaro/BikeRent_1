@@ -6,7 +6,8 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.Set;
 import javax.persistence.*;
 import org.hibernate.annotations.Type;
@@ -34,13 +35,14 @@ public class RentingOrder implements Serializable {
     
    
     orderStatus Status; 
-     
+    
    @OneToMany
     Set<OrderItem> BorrowingItems;
    
    public void RentingOrder(Date StartDate, Date EndDate, Customer l_Borrower,orderStatus l_Status)
    {
-      BookingDate= new Date();
+      Date date    = new Date(Calendar.getInstance().getTime().getTime());
+      BookingDate  = date;
       StartRenting=StartDate;
       EndRenting= EndDate;
       Borrower= l_Borrower;

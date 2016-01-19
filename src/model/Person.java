@@ -1,8 +1,9 @@
 
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
@@ -17,19 +18,25 @@ public class Person implements Serializable {
     private Long    ID ;
    
    @OneToMany(cascade=CascadeType.ALL)
-    private Set<Address> Addresslist;
+    private Set<Address> Addresslist = new HashSet();
    
     private String  FirstName;
    
     private String  LastName;
    
     private Date    DOB;
+    
+    private String  Password;
    
-    public Person(String l_FirstName, String l_LastName, Date l_DOB, Address ad)
+    public Person() {}
+    
+    public Person(String l_FirstName, String l_LastName, Date l_DOB,
+                  String l_Password, Address ad)
     {
        FirstName=l_FirstName;
        LastName=l_LastName;
        DOB=l_DOB;
+       Password=l_Password;
        Addresslist.add(ad);
     }
     
@@ -38,6 +45,12 @@ public class Person implements Serializable {
    {
     return FirstName+" "+LastName;
    }
+   
+   public void SetName(String firstname, String lastname) {
+       FirstName = firstname;
+       LastName  = lastname;
+   }
+   
    public String GetAddress( int importance)
    {
      Address[] t =  (Address [])Addresslist.toArray();
@@ -56,6 +69,20 @@ public class Person implements Serializable {
    {
         return DOB;
    }
+   
+   public Long getID() {
+       return ID;
+   }
+   
+       
+    public String printPerson() {
+
+        return "ID: " + getID() +
+               "\t\tFirstname: " + FirstName +
+               "\t\tLastName: " + LastName +
+               "\t\tDOB: " + DOB
+        ;
+    }
  
    
 }

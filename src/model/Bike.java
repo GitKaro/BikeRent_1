@@ -7,7 +7,8 @@ package model;
 
 
 import  java.awt.Color;
-import java.util.Date;
+import java.sql.Date;
+
 import java.util.Set;
 import javax.persistence.*;
 
@@ -29,7 +30,8 @@ public class Bike extends Item {
     @OneToMany
     Set<OrderItem> Orders;
 
-   
+
+   public Bike() {}
 
     public Bike(double l_Price,String l_Model,String l_Brand,String l_FrameNumber,Color l_Color, int l_Gears, int l_FrameSize) {
         super(l_Price);
@@ -68,7 +70,6 @@ public class Bike extends Item {
     {
         Gears= newGears;
     }
-     
       
     public int getFrameSize()
     {
@@ -119,13 +120,26 @@ public class Bike extends Item {
         boolean Rentable= true;
         for(OrderItem order :Orders)
         {
-            if((order.parentOrder.StartRenting.after(Start)) || (order.parentOrder.EndRenting.before(End)))
-            {
-              Rentable=false;  
-            } 
+            for(RentingOrder po :order.parentOrder) {
+                if((po.StartRenting.after(Start)) || (po.EndRenting.before(End)))
+                {
+                    Rentable=false;  
+                } 
+            }
            
         }
         return Rentable;
     }
+    
+    
+    public String printBike() {
+
+        return "ID: " + super.getID() +
+               "\t\tModel: " + Model +
+               "\t\tBrand: " + Brand +
+               "\t\tFramenumber: " + FrameNumber
+        ;
+    }
+            
 }
 
