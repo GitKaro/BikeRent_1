@@ -7,9 +7,7 @@ package model;
 
 
 import  java.awt.Color;
-import java.lang.reflect.Field;
 import java.util.Date;
-
 import java.util.Set;
 import javax.persistence.*;
 

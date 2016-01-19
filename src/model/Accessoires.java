@@ -11,6 +11,8 @@ import javax.persistence.*;
 @Table(name = "ACCESSOIRES")
 public class Accessoires extends Item {
 
+    
+
     public Accessoires(double l_Price) {
         super(l_Price);
     }
