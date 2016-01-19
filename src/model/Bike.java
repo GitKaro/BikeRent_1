@@ -31,6 +31,7 @@ public class Bike extends Item {
     @OneToMany
     Set<OrderItem> Orders;
 
+
    
 
     public Bike(double l_Price,String l_Model,String l_Brand,String l_FrameNumber,Color l_Color, int l_Gears, int l_FrameSize) {
@@ -70,7 +71,6 @@ public class Bike extends Item {
     {
         Gears= newGears;
     }
-     
       
     public int getFrameSize()
     {
@@ -121,10 +121,12 @@ public class Bike extends Item {
         boolean Rentable= true;
         for(OrderItem order :Orders)
         {
-            if((order.parentOrder.StartRenting.after(Start)) || (order.parentOrder.EndRenting.before(End)))
-            {
-              Rentable=false;  
-            } 
+            for(RentingOrder po :order.parentOrder) {
+                if((po.StartRenting.after(Start)) || (po.EndRenting.before(End)))
+                {
+                    Rentable=false;  
+                } 
+            }
            
         }
         return Rentable;

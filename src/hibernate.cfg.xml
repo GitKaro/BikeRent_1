@@ -34,6 +34,7 @@
                 <mapping class="model.Online"/>
                 <mapping class="model.OnlineAccess"/>
                 <mapping class="model.RentingOrder"/>
+                <mapping class="model.OrderItem"/>
                 
 
 

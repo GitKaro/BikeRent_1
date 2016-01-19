@@ -35,7 +35,7 @@ public class RentingOrder implements Serializable {
     
    
     orderStatus Status; 
-     
+    
    @OneToMany
     Set<OrderItem> BorrowingItems;
    

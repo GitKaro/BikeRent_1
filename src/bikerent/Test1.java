@@ -58,7 +58,7 @@ public class Test1 {
 	return sessionFactory;  
     }
     
-    @Test
+    @org.junit.Test
     public void test() {
         configureSessionFactory();
         
@@ -73,6 +73,8 @@ public class Test1 {
         // Committing the change in the database.
         session.flush();
         tx.commit();
+        System.out.println(" ############################### ");
+        System.out.println(countBikes(session));
         assertEquals("Count of bikes must be 4: ", 4, countBikes(session));
         assertEquals("Count of person must be 3: ", 3, countPerson(session));
         assertEquals("Count of accessoires must be 8: ", 8, countAccessoires(session));

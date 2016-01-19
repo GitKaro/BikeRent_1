@@ -3,6 +3,7 @@ package model;
 
 import java.sql.Date;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
@@ -17,7 +18,7 @@ public class Person implements Serializable {
     private Long    ID ;
    
    @OneToMany(cascade=CascadeType.ALL)
-    private Set<Address> Addresslist;
+    private Set<Address> Addresslist = new HashSet();
    
     private String  FirstName;
    
